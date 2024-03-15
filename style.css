@@ -1,14 +1,13 @@
 #container {
     display: flex;
-    width: 800px;
-    height: 800px;
-    border: 2px solid red;
+    width: 850px;
     flex-wrap: wrap;
+    flex-grow: 1;
 }
 
 .grid-square {
-    height: 196px;
-    width: 196px;
+    height: 48px;
+    width: 48px;
     border: 2px solid red;
 
 }

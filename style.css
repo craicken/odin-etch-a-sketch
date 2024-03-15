@@ -9,5 +9,8 @@
     height: 48px;
     width: 48px;
     border: 2px solid red;
+}
 
+.grid-active {
+    background-color: pink;
 }

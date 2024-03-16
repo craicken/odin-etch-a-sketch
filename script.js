@@ -11,6 +11,8 @@ function setGrid(squares) {
         div.classList.add("grid-square");
         div.addEventListener("mouseover", () => {
             div.classList.toggle("grid-active");
+            const RGB = setRGB();
+            div.style.backgroundColor = `rgb(${RGB})`;
         })
     }
 
@@ -19,6 +21,14 @@ function setGrid(squares) {
         element.style.width = `${gridSquareDimensions}px`;
         element.style.height = `${gridSquareDimensions}px`;
     })
+}
+
+function setRGB() {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+
+    return `${red},${green},${blue}`;
 }
 
 function removeGrid() {

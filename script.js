@@ -3,10 +3,8 @@ const button = document.querySelector("#new-grid");
 
 
 function setGrid(squares) {
-
     let gridSize = squares ** 2;
-
-    document.querySelector("#container").style.width = `${squares * 50}px`;
+    let gridSquareDimensions = 1000 / squares;
 
     for (let i = 0; i < gridSize; i++) {
         const div = container.appendChild(document.createElement("div"));
@@ -15,6 +13,12 @@ function setGrid(squares) {
             div.classList.toggle("grid-active");
         })
     }
+
+    const gridSquareClass = document.querySelectorAll(".grid-square");
+    gridSquareClass.forEach(element => {
+        element.style.width = `${gridSquareDimensions}px`;
+        element.style.height = `${gridSquareDimensions}px`;
+    })
 }
 
 function removeGrid() {
@@ -24,9 +28,9 @@ function removeGrid() {
 }
 
 button.addEventListener("click", () => {
-    let squares = prompt("How mmany squares per side?");
+    let squares = prompt("How many squares per side?");
     removeGrid();
     setGrid(squares);
 })
 
-setGrid(16);
+setGrid(2);
